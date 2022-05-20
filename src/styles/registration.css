@@ -1,0 +1,29 @@
+* {
+    --box-shadow-color: rgba(91, 83, 83, 0.733);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 630px;
+}
+
+.registration-container {
+    box-shadow: 3px 3px 5px var(--box-shadow-color);
+    border-radius: 20px;
+    padding: 1% 1em 3% 1em;
+}
+
+.registration-header {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3%;
+}
+
+.registration-header h4 {
+    text-align: center;
+}
