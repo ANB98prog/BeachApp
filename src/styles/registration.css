@@ -27,3 +27,20 @@ body {
 .registration-header h4 {
     text-align: center;
 }
+
+/* monitors and laptops */
+@media (min-width: 1240px)  {}
+
+/* tablet */
+@media (min-width: 1024px) and (max-width: 1240px)  {}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .registration-container{        
+        box-shadow: none;
+    }
+}
