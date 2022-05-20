@@ -1,0 +1,189 @@
+
+#idMainContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: thin solid var(--color-background-on);
+    background-color: var(--color-background);
+}
+
+#idContainer{
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*ControlPanel*/
+#idControlPanelContainer{
+    border-left: thin solid var(--color-background-placeholder);
+    padding: 0 2px;
+}
+
+/*Caption*/
+#CaptionContainer{
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    text-align: center;
+    border-bottom: thin solid var(--color-background-placeholder);
+}
+
+#idTypeEvent{
+    flex-grow: 1;
+    text-align: center;
+    color: var(--color-background-on);
+    margin: 0;
+}
+
+#idTimeEvent{
+    color: var(--color-background-placeholder);
+    font-size: small;
+    margin: 0;
+}
+
+/*Основная часть-----------------------------------*/
+#idContentContainer{
+    display: flex;
+    flex-grow: 1;
+    align-items: stretch;
+}
+/*Навигация*/
+#idNavigation{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    border-right: thin solid var(--color-background-on);
+}
+
+.sMenuItemContainer{
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    overflow: hidden;
+    position: relative; 
+}
+
+
+.sMenuItem{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    padding: 10px 5ch 10px 5px;
+    transition: transform 0.2s linear;
+    cursor: pointer;
+    color: var(--color-background-placeholder);
+}
+
+.sMenuItem.sActiveItem{
+    color: var(--color-background-on);
+    transform: scale(1.1) translateX(4%);
+    background-color: var(--color-primary-light);
+}
+
+.sMenuItem:hover{
+    background-color: var(--color-primary-light);
+    transform: scale(1.1) translateX(4%);
+}
+/*Содержимое вкладок*/
+#idTabContainer{
+    flex-grow: 1;
+    position: relative;
+}
+
+#idMenuContentContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#idWaitIndication{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*Вкладка Owner*/
+.sOwnerFormContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sNoOwner{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*Вкладка доп.Информации-------*/
+/*Удаление/добавление/редактирование пользователя*/
+.sUserInfoContainerLevel1{
+    flex-grow: 1;
+    position: relative;
+}
+.sUserInfoContainerLevel2{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sUserForm{
+    flex-grow: 1;
+}
+
+.sTitleUser{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--color-background-placeholder);
+    cursor: default;
+}
+/*Добавление/удаление/редактирование группы*/
+.sGroupInfoContainerLevel1{
+    flex-grow: 1;
+    position: relative;
+}
+.sGroupInfoContainerLevel2{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.sGroupForm{
+    height: 100%;
+    max-height: fit-content;
+    flex-grow: 1;
+    align-self: center;
+}
+
+/*Новые измеренные данные*/
+
+.sDataInfoContainerLevel1{
+    flex-grow: 1;
+    position: relative;
+}
+.sDataInfoContainerLevel2{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sGraphData{
+    width: 100%;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/*Разное-------------------------*/

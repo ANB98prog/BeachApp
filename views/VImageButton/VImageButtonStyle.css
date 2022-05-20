@@ -1,0 +1,92 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#idContainer{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: calc(100%-10px);
+    height: calc(100%-10px);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: inherit;
+    padding: 5px;
+}
+
+
+#idPlaceholderContainer{
+    display: flex;
+    height: 80%;
+    align-items: center;
+    top: 10%;
+    right: 110%;
+    position: absolute;
+    padding: 0 5px;
+    background-color: var(--color-background);
+    visibility: hidden;
+    max-width: 100px;
+}
+#idPlaceholderContainer.sVisibility{
+    visibility: visible;
+}
+#idPlaceholder{
+    font-size: 0.7em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#idBackground{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    clip-path: circle(48% at 50% 50%);
+}
+
+#idBackground:hover{
+    background-color: black;
+    opacity: 0.2;
+    transition: opacity 0.2s linear;;
+}
+
+button{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;
+    border: none;
+    color: var(--color);
+    background-color: var(--color);
+    -webkit-mask: var(--src) center / contain no-repeat;
+    mask: var(--src) center / contain no-repeat;
+    width: 100%;
+    font-size: var(--font);
+}
+#idTextContainer{
+    color: var(--color);
+    font-size: var(--font);
+    padding: 0 5px;
+}
+
+#idText{
+    color: inherit;
+    font-size: inherit;
+    text-align: center;
+    
+}
+
+#idTextContainer.sHidden{
+    display: none;
+    visibility: hidden;
+    
+}
+

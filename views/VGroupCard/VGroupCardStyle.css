@@ -1,0 +1,118 @@
+@import "../../stylesheets/common.css";
+
+/*Структура, контейнеры*/
+#idContainer{
+    box-sizing: border-box;
+    width: calc(100% - 10px);
+    display: flex;
+    overflow: auto;
+    padding: 2px;
+    margin: 5px;
+    border: thin solid var(--color-background-on);
+    background-color: var(--color-background);
+    height: calc(100% - 10px);
+    position: relative;
+}
+
+#idUsersContainer{
+    flex-grow: 1;
+}
+
+/*Заголовок Контролирующие вместе с индикатором*/
+#idControllingUsersTitle{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.sCaption{
+    flex-grow: 1;
+    text-align: center;
+}
+
+#idActiveIndicatorContainer{
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    clip-path: circle(40% at 50% 50%);
+    background-color: green;
+}
+
+#idActiveIndicatorContainer.sActive{
+    background-color: green;
+}
+
+#idActiveIndicatorContainer.sNotActive{
+    background-color: red;
+}
+
+/*Информация о пользователях*/
+#idControllingUsersContainer{
+    display: flex;
+    padding: 5px 2px;
+    position: relative;
+}
+
+.sNoUserView{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--color-background-placeholder);
+}
+
+.sUserCard{
+    flex-grow: 1;
+}
+
+.sPlusControllingContainer{
+    display: flex;
+    padding: 0 5px;
+    align-items: center;
+}
+
+
+.sOtherUsersInfo{
+    font-size: small;
+}
+
+/*панель управления*/
+#idControlPanelContainer{
+    box-sizing: border-box;
+    display: none;
+    visibility: hidden;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 0 5px;
+    position: sticky;
+    right: -5px;
+    background-color: var(--color-background);
+}
+#idControlPanelContainer.sVisible{
+    display: flex;
+    visibility: visible;
+}
+/*Стили views*/
+
+
+
+.sControlButton{
+    visibility: hidden;
+}
+
+.sControlButton.sVisible{
+    visibility: visible;
+}
+
+/*Разное*/
+.sSeparator{
+    width:100%; 
+    height: 1px; 
+    background-color: var(--color-background-placeholder)
+}

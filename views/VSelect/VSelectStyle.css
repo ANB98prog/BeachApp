@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.select_box{
+    width: 100%;
+    margin: 2px;
+    position: relative;
+}
+
+#idContainerDropDown{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#idContainerDropDown::before{
+    content: attr(label-value);
+    margin-right: 5px;
+    white-space: nowrap;
+    align-self: flex-end;
+}
+/*Главная кнопка*/
+#idButtonDropDown{
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid var(--color-primary);
+    padding: 5px 30px 5px 5px;
+    background-color: var(--color-background);
+    text-align: start;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--color-background-placeholder);
+    cursor: pointer;
+}
+
+#idButtonDropDown.sNotActive{
+    pointer-events: none;
+    cursor: unset;
+}
+
+#idButtonDropDown.sChoiced{
+    color: var(--color-background-on);
+}
+
+#idButtonDropDown::before {
+    position: absolute;
+    right: 3px;
+    content: "";
+    width: 15px;
+    height: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-primary);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 50% 100%);
+    pointer-events: none;
+    z-index: 99;
+  }
+  #idButtonDropDown.sNotActive::before{
+    width: 0;
+    height: 0;
+}
+  #idButtonDropDown::after {
+    position: absolute;
+    right: 0px;
+    content: "";
+    width: 23px;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-background);
+    pointer-events: none;
+  }
+  #idButtonDropDown:hover::before{
+    background-color: var(--color-accent);
+  }
+
+#idButtonDropDown:hover{
+    border-color: var(--color-accent);
+}
+
+#idButtonDropDown:focus{
+    outline: none;
+    box-shadow: 0px 0px 2px 1px var(--color-background-on);
+}
+
+/*Items*/
+
+#idOptionsContainer{
+    width: 100%;
+    list-style-type: none;
+    background-color: var(--color-background);
+    position: absolute;
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.sDropDownItem{
+    border: 1px solid var(--color-primary);
+    border-bottom: 0;
+    padding: 5px 5px 5px 23px;
+    cursor: pointer;
+}
+
+/*Стрелочка выбора*/
+.sOptionContainer1Level{
+    position: relative;
+}
+
+.sOptionContainer2Level.sItemChecked::before{
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 7px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    bottom: 9px;
+    left: 5px;
+    clip-path: polygon(0% 0%, 10% 0%, 50% 80%, 90% 0%, 100% 0%, 50% 100%, 0% 0%);
+}
+
+.sItemChecked{
+    background-color: var(--color-background-dark);
+}
+
+.sDropDownItem:last-child{
+    border-radius: 0px 0px 5px 5px;
+    border-bottom: 1px solid var(--color-primary);
+    margin-bottom: 1px;
+}
+
+.sDropDownItem:first-child{
+    border-top-left-radius: 5px;
+    border-top-left-radius: 5px
+}
+
+.sDropDownItem:hover{
+    background-color: var(--color-background-dark);
+}
+
+
+.sPreviewContainer{
+    display: flex;
+    border: 1px solid var(--color-primary);
+    border-radius: 2px;
+    padding: 0px 2px;
+    margin: 0px 3px;
+    align-items: center;
+    color: var(--color-background-on);
+    white-space: nowrap;
+}
+
+.sPreviewButtonDelete{
+    background-color: var(--color-background);
+    outline: none;
+    padding: 0px 2px;
+    margin: 0px 2px;
+    border: none;
+}
+
+.sPreviewButtonDelete:hover{
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+
+  

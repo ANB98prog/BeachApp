@@ -1,0 +1,65 @@
+/**{
+  --color-primary: rgb(96, 125, 139);
+  --color-primary-components: 96, 125, 139;
+  --color-primary-dark: rgb(52,81,94);
+--color-primary-light: rgb(207, 216, 220);
+--color-accent: rgb(83, 109, 254);
+--color-primary-on: white;
+--color-background: white;
+--color-background-components: 255, 255, 255;
+--color-background-dark: whitesmoke;
+--color-background-on: black;
+--color-background-on-components: 0, 0, 0;
+--color-background-placeholder: rgb(117, 117, 117);
+
+--color-error: red;
+--color-error-components: 255, 0, 0;
+}*/
+
+*{
+--color-primary: rgb(224, 224, 224);
+--color-primary-components: 224, 224, 224;
+--color-primary-dark: rgb(189, 189, 189);
+--color-primary-light: rgb(189, 189, 189);
+--color-accent: rgb(83, 109, 254);
+--color-accent-components: 83, 109, 254;
+--color-primary-on: black;
+--color-background: white;
+--color-background-components: 255, 255, 255;
+--color-background-dark: whitesmoke;
+--color-background-on: black;
+--color-background-on-components: 0, 0, 0;
+--color-background-placeholder: rgba(var(--color-background-on-components), 0.8);
+
+--color-error: red;
+--color-error-components: 255, 0, 0;
+}
+
+*{
+margin: 0;
+padding: 0;
+}
+
+html,body{
+color: lights;
+height: 100%;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(var(--color-primary-components), 0.5);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 5px;
+}

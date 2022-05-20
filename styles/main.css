@@ -1,0 +1,29 @@
+@import url("common.css");
+
+#idContainer{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "header header"
+                        "leftNav content";
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr 5fr;
+    background-color: var(--color-primary);
+}
+
+#idHeaderContainer{
+    background-color: var(--color-primary);
+    grid-area: header;
+}
+
+#idNavContainer{
+    background-color: var(--color-primary);
+    grid-area: leftNav;
+}
+
+#idContentContainer{
+    background-color: var(--color-background);
+    grid-area: content;
+    margin: 0 5px 2px 0;
+}
+

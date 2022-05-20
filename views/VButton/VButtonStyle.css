@@ -1,0 +1,28 @@
+
+.sButton {
+    box-sizing: inherit;
+    width: inherit;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: x-large;
+    color: var(--color-background-on);
+    background-color: var(--color-background);
+    border-width: 1px;
+    padding: 6px 14px 6px 14px;
+}
+
+.sRounded{
+    border-radius: 15px;
+}
+
+.sButton.sButtonEnabled:hover{
+    color: var(--color-primary-on);
+    background-color: var(--color-primary);
+}
+
+.sButtonEnabled{
+    cursor: pointer;
+}
+.ButtonDisabled{
+    cursor: default;
+}
+

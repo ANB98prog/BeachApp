@@ -1,0 +1,79 @@
+@import "../../stylesheets/common.css";
+
+*{
+    --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --font-size: 20px;
+}
+
+#idUserCardContainer{
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    background-color: inherit;
+    box-shadow: 0 0 1px 0 var(--color-background-on);
+    overflow-x: auto;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#idUserCardContainer.sWithShadow{
+    box-shadow: 0 0 4px 0 var(--color-background-on);
+}
+
+
+/*Идентификаторное значение*/
+#idIdentificatorContainer{
+    display: flex;
+    align-items: center;
+    max-width: 5%;
+    max-height: 100%;
+    padding: 0 5px;
+}
+
+#idIdentificatorContainer div{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+#idIdentificator{
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    margin: auto;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+/*аватарка*/
+
+#idAvatar{
+    max-height: 75px;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    padding: 2px 2px;
+    box-shadow: 0 0 1px 0 var(--color-background-on);
+}
+
+/*Основная информация*/
+#idInfoUserContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+.sTextContainer{
+    display: flex;
+    align-items: center;
+}
+.sTextField{
+    padding: 0 5px;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    white-space: nowrap;
+}
+.sAccountTypeField{
+    font-style: italic;
+}

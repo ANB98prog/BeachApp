@@ -1,0 +1,48 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#idContainer{
+    box-sizing: border-box;
+    display: flex;
+    background-color: var(--color-primary);
+    height: fit-content;
+    position: relative;
+}
+
+
+#idInfoContainer{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-background-on);
+    padding: 5px;
+    font-size: small;
+}
+
+#idActButton{
+    color: var(--color-background-on);
+    font-style: oblique;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: fit-content;
+    text-decoration: underline;
+    align-self: flex-end;
+}
+
+#idActButton:hover{
+    cursor: pointer;
+}
+
+#idAvatar{
+    box-sizing: border-box;
+    background-color: aquamarine;
+    background-image: url("/javascripts/VUserCardLight/img/test.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    margin: 5px 2px;
+}

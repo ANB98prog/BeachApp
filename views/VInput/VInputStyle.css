@@ -1,0 +1,176 @@
+@import "../../stylesheets/common.css";
+
+*{
+	--up-top: 0px;
+	--down-top: 17px; 
+	--font-main-size: 16px; /*Только размер (без констант small, large...)*/
+	--font-placeholder-size: 12px;
+	--num-available-values-shown: 5;
+}
+
+/*Контейнер всего*/
+#idContainer{
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px;
+	position: relative;
+	margin: 1px 0px;
+}
+
+/*Контейнер, где находятся поле ввода и доп кнопка*/
+#idInputFieldContainer{
+	display: flex;
+	flex-grow: 1;
+	border: 1px solid transparent;
+	border-bottom: 1px solid var(--color-background-on);
+}
+
+#idInputFieldContainer.sErrorInput{
+	border-bottom: 1px solid red;
+}
+
+#idInputFieldContainer.sFocus{
+	border: 1px solid var(--color-accent);
+	box-shadow: 0px 0px 2px 1px var(--color-accent);
+}
+
+
+@keyframes focusAnim {
+	to{
+		top: var(--up-top);
+		font-size: var(--font-placeholder-size);
+		color: var(--color-accent)
+	}
+}
+
+@keyframes blurAnim{
+	from{
+		top: var(--up-top);
+		font-size: var(--font-placeholder-size);
+		color: var(--color-accent)
+	}
+
+	to{
+		top: var(--down-top);
+		font-size: var(--font-main-size);
+		color: var(--color-background-placeholder);
+	}
+}
+
+
+#idInputFieldContainer::before{
+	content: attr(data-caption);
+	margin-left: 2px;
+	padding: 0px 5px;
+	position: absolute;
+	background-color: var(--color-background);
+	top: var(--down-top);
+	pointer-events: none;
+	color: var(--color-background-placeholder);
+}
+
+
+#idInputFieldContainer.focusNoDataAnim::before{
+	animation: focusAnim 0.1s linear 0s 1;
+	animation-fill-mode: forwards;
+}
+
+#idInputFieldContainer.focusNoDataWithoutAnim::before{
+	top: var(--up-top);
+	font-size: var(--font-placeholder-size);
+	color: var(--color-accent)
+}
+
+#idInputFieldContainer.focusWithData::before{
+	top: var(--up-top);
+	font-size: var(--font-placeholder-size);
+	color: var(--color-accent);
+}
+
+#idInputFieldContainer.blurNoDataAnim::before{
+	animation: blurAnim 0.1s linear 0s 1;
+	animation-fill-mode: forwards;
+}
+#idInputFieldContainer.blurNoDataWithoutAnim::before{
+	top: var(--down-top);
+	font-size: var(--font-main-size);
+	color: var(--color-background-placeholder)
+}
+
+#idInputFieldContainer.blurWithData::before{
+	top: var(--up-top);
+	font-size: var(--font-placeholder-size);
+	color: var(--color-background-placeholder);
+}
+
+/*Поле для ввода*/
+#idInput{
+	flex-grow: 1;
+	padding: 5px 2px 2px 2px;
+	font-size: inherit;
+	border: 1px solid transparent;
+	outline: none;
+	font-size: var(--font-main-size);
+}
+
+/*Доп кнопка (исп при вводе паролей)*/
+#idAdditionalButton{
+	align-self: center;
+	width: calc(var(--font-main-size) + 6px);
+	height: calc(var(--font-main-size) + 6px);
+	background-color: var(--color-background-placeholder);
+}
+#idAdditionalButton:hover{
+	background-color: var(--color-background-on);
+}
+
+#idAdditionalButton.sPasswordHidden{
+	-webkit-mask-size: cover;
+	mask-size: cover;
+  	-webkit-mask-image: url(imgs/password_hidden.svg);
+  	mask-image: url(imgs/password_hidden.svg);
+}
+
+#idAdditionalButton.sPasswordShown{
+	-webkit-mask-size: cover;
+  	mask-size: cover;
+  	-webkit-mask-image: url(imgs/password_shown.svg);
+  	mask-image: url(imgs/password_shown.svg);
+}
+
+/*Возможные значения*/
+#idAvailableValuesContainer{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 75%;
+	top: calc(var(--font-main-size) + 27px);
+	background-color: var(--color-background);
+	z-index: 1;
+	visibility: collapse;
+	max-height: calc(var(--num-available-values-shown)*(var(--font-main-size)*0.75 + 13px));
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: 1px solid var(--color-primary);
+	border-radius: 3px;
+}
+
+.sAvailableValue{
+	padding: 5px;
+	font-size: calc(var(--font-main-size)*0.75);
+	background-color: var(--color-background-dark);
+	border-bottom: 1px solid var(--color-primary);
+	border-right: 1px solid var(--color-primary);
+}
+#idAvailableValuesContainer.sAvailableValue{
+	border: none;
+}
+.sAvailableValue.sFocus, .sAvailableValue:hover{
+	background-color: var(--color-primary-dark);
+}
+
+
+.cFindText{
+	background-color: yellow;
+}

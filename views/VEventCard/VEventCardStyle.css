@@ -1,0 +1,85 @@
+
+#idContainer{
+    all: inherit;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 2fr auto;
+    border: thin solid var(--color-background-on);
+    margin: 10px;
+    box-shadow: 0px 0px 2px 1px var(--color-background-on);
+    background-color: var(--color-background);
+}
+
+#idContainer.sNotRead{
+    background-color: var(--color-primary-light);
+}
+.sCaptionContainer{
+    color: var(--color-background-placeholder);
+    font-size: small;
+    padding: 2px 5px;
+    text-align: center;
+    border-bottom: thin solid var(--color-background-placeholder);
+}
+/*Event type Title*/
+#idEventTypeContainer{
+    display: flex;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 3;
+    border-left: medium solid var(--color-background-on);
+}
+
+#idEventTypeTitle{
+    width: min-content;
+    /*writing-mode: vertical-rl;*/
+    text-align: center;
+    padding: 2px 5px;   
+}
+
+/*Owner*/
+#idOwnerCaptionContainer{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#idOwnerViewContainer{
+    display: flex;
+    flex-direction: column;
+    grid-row: 2;
+    grid-column: 2;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.sNoOwnerText{
+    text-align: center;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*Дата создания*/
+#idInfoContainer{
+    grid-row: 1;
+    grid-column: 3;
+    border-bottom: thin solid var(--color-background-placeholder);
+}
+#idDateCreateShow{
+    margin: 0;
+    color: var(--color-background-placeholder);
+}
+
+/*Control panel*/
+#idControlCaptionContainer{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#idControlPanelContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 1;
+    border-right: medium solid var(--color-background-on);
+}

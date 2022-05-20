@@ -1,0 +1,175 @@
+@import "../../stylesheets/common.css";
+.cContainer{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px;
+    border-color:var(--color-primary);
+    background-color: var(--color-background);
+}
+/*Таблица*/
+.dataContainer{
+    position: relative;
+    box-sizing: border-box;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#idTableContainer{
+    width: 100%;
+    position: relative;
+    flex-grow: 1;
+}
+
+#idDiv2{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+table{
+    display: grid;
+    grid-template-columns: var(--column-template);
+    border-collapse: collapse;
+}
+
+thead,tbody, tr{
+    display: contents;
+}
+
+th{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: var(--color-primary-light);
+    box-shadow: inset 0px 0px 4px 0px var(--color-primary);
+    z-index: 1;
+}
+
+td,th{
+    display: flex;
+    border: thin solid var(--color-background-on);
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+td.sControlColumn,th.sControlColumn{
+    position: sticky;
+    position: -webkit-sticky;
+    right: 0;
+}
+td.sControlColumn{
+    background-color: var(--color-background);
+}
+
+/*Специализированные ячейки*/
+
+
+.sCellImage{
+    max-width: 100%;
+    max-height: 75px;
+    object-fit: contain;
+}
+
+.sCellButton{
+    max-height: 25px;
+    color: var(--color-background-on);
+    background-color: var(--color, transparent);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    border: none;
+    border-bottom: 1px solid var(--color-background-on);
+    margin: 2px 5px;
+}
+
+.sCellButton:hover{
+    filter: opacity(50%);
+}
+
+
+
+/*Фильтрация*/
+
+.cFindText{
+    background-color: yellow;
+}
+.cSearchDiv {
+    margin: 3px 0px 3px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2;
+}
+#idInputSearch{
+    margin-right: 3px;
+    flex-grow: 1;
+}
+#idButtonRegExChoice{
+    padding: 5px;
+    margin: 1px;
+    background-color: var(--color-background);
+    outline: none;
+    border: 1px solid var(--color-primary);
+}
+#idButtonRegExChoice:hover{
+    background-color: var(--color-primary-light);
+}
+#idButtonRegExChoice.sEnabledRegEx{
+    background-color: var(--color-primary-light);
+    box-shadow: inset 0px 0px 1px 0px var(--color-background-on);
+}
+#idButtonRegExChoice.sDisabledRegEx{
+    background-color: var(--color-background);
+    box-shadow: 0;
+}
+
+#idSelectSearchColumn{
+    width: 20%;
+}
+
+/*Загрузка*/
+@keyframes rotateImage{
+    to{
+        transform: rotate(350deg);
+    }
+}
+.sLoadContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: top;
+    visibility: hidden;
+    position: absolute;
+    flex-grow: 1;
+    background-color: rgba(255,255,255, 0.8);
+    justify-content: center;
+    z-index: 3;
+}
+.sLoadImg{
+    width: 20px;
+    height: 20px;
+    margin-top: 40px;
+    animation: rotateImage 1s linear 0s infinite normal none;
+    align-self: top;
+}
+
+/*Нет данных*/
+#idNoData{
+    text-align: center;
+    font-size: large;
+    font-style: italic;
+    padding: 40px 0px 40px 0px;
+    color: rgba(0,0,0, 0.5);
+}

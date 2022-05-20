@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#idMessageContainer{
+    box-sizing: border-box;
+    width: fit-content;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    transition: right 0.2s linear;
+    z-index: 999;
+    border: thin solid var(--color-background-on);
+    display: flex;
+    flex-direction: column;
+}
+
+/*Header------------------------*/
+#idHeader{
+    width: calc(100% - 4px);
+    display: flex;
+    align-items: center;
+    padding: 2px 2px;
+    background-color: var(--color-primary);
+    color: var(--color-primary-on);
+}
+
+#idMessageTitle{
+    flex-grow: 1;
+    padding: 0 10px;
+    text-align: center;
+}
+
+#idTypeIconContainer{
+    height: 20px;
+    aspect-ratio: 1;
+    background-color: var(--color-primary-on);
+    -webkit-mask: var(--url-type-image) center / contain no-repeat;
+    mask: var(--url-type-image) center / contain no-repeat;
+    margin: 2px 2px;
+}
+
+#idCloseButton{
+    --color-background-on: var(--color-primary-on);
+}
+
+#idExpandButton{
+    --color-background-on: var(--color-primary-on);
+    transition: transform 0.2s linear;
+}
+
+#idExpandButton.sExpand{
+    transform: rotate(180deg);
+}
+/*-----------------------------*/
+
+/*Content*/
+#idContentContainer{
+    color: var(--color-background-on);
+}
