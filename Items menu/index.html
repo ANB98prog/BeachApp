@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Album example · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="fonts/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+        
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+        
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+        
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+        
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+
+        <section class="text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Список товаров и услуг</h1>
+                    <p class="lead text-muted">На данной странице предоставлены все товары и услуги, доступные на пляжах города-курорта Анапа</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+
+            <div class="flex-shrink-0 p-3 bg-white" style="width: 98%;">
+
+                <ul class="list-unstyled user-1">
+                    <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+        Категории
+      </button>
+                        <div class="collapse" id="home-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li class="mb-1">
+                                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" onclick="filterSelection('food')" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              Еда и напитки
+            </button>
+                                    <div class="collapse" id="orders-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Пиво</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Кукуруза</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Шаурма</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Другое</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1">
+                                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" onclick="filterSelection('staff')" data-bs-toggle="collapse" data-bs-target="#also-collapse" aria-expanded="false">
+              Сувениры
+            </button>
+                                    <div class="collapse" id="also-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Ракушки</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Ручная работа</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Другое</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1">
+                                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" onclick="filterSelection('entertain')" data-bs-toggle="collapse" data-bs-target="#also-3-collapse" aria-expanded="false">
+              Развлечения
+            </button>
+                                    <div class="collapse" id="also-3-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Парашют</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Ловля медуз</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Поход на катере</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1">
+                                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#photo-collapse" aria-expanded="false">
+            Фотографы
+          </button>
+                                    <div class="collapse" id="photo-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">С животными</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Без животных</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+        Услуги / продажи
+      </button>
+                        <div class="collapse" id="dashboard-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li class="mb-1">
+                                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                  Кофейня "Зерно"
+            </button>
+                                    <div class="collapse" id="account-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1">
+                                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#Kolya-collapse" aria-expanded="false">
+              Спа-салон "Рай"
+            </button>
+                                    <div class="collapse" id="Kolya-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1">
+                                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                Батут "Аэро"
+          </button>
+                                    <div class="collapse" id="account-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                                            <li><a href="https://getbootstrap.com/docs/5.2/examples/sidebars/#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex-shrink-0 p-3 bg-light" style="width: 100%; ">
+                <p style="display: flex; margin: auto;">Сортировать&nbsp;<button>&#9776;</button></p>
+            </div>
+            <div class="container">
+                <div class="col food">
+                    <div class="card shadow-sm">
+                        <img src="./images/shaurma123.jpg" width="100%" height="100%" alt="">
+
+                        <div class="card-body">
+                            <p class="card-text">Продавец: <b>Махмуд</b></p>
+                            <p class="card-text">Рейтинг:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span><a href="" style="float: right">Отзывы</a></span></p>
+                            <p class="card-text">Классическая шаурма, приготовленная на углях. Собаки не пострадали.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style='text-decoration: none;' data-fancybox="iframe" href="https://yandex.ru/map-widget/v1/?um=constructor%3A1ff2981c28ea9db865a0bad283427e078c9a558d9bf94319967e81a003eb8eca&amp;source=constructor" data-type="iframe" href="javascript:;">Посмотреть на карте</a></button>
+
+                                </div>
+                                <p style="color: darkgray; margin-top: 1rem; margin-bottom: 1rem"><i>200 м. от вас</i></p>
+
+                            </div>
+                            <small class="text-muted">180 р. <i>+ Кэшбек 5%</i></small>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col food">
+                    <div class="card shadow-sm">
+                        <img src="./images/Drink2.jpg" width="100%" height="100%" alt="">
+
+
+                        <div class="card-body">
+                            <p class="card-text">Продавец: <b>Ильфат</b></p>
+                            <p class="card-text">Рейтинг:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span><a href="" style="float: right">Отзывы</a></span></p>
+                            <p class="card-text">Освежающий лимонный напиток из свежих цитрусов.</p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style='text-decoration: none;' data-fancybox="iframe" href="https://yandex.ru/map-widget/v1/?um=constructor%3A1ff2981c28ea9db865a0bad283427e078c9a558d9bf94319967e81a003eb8eca&amp;source=constructor" data-type="iframe" href="javascript:;">Посмотреть на карте</a></button>
+
+                                </div>
+                                <p style="color: darkgray; margin-top: 1rem; margin-bottom: 1rem"><i>50 м. от вас</i></p>
+                            </div>
+                            <small style="text-decoration: line-through;" class="text-muted">120 р.</small>
+                            <small class="text-muted">105 р.</small>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col food">
+                    <div class="card shadow-sm">
+                        <img src="./images/corn.jpg" width="100%" height="100%" alt="">
+
+                        <div class="card-body">
+                            <p class="card-text">Продавец: <b>Махмуд</b></p>
+                            <p class="card-text">Рейтинг:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span><a href="" style="float: right">Отзывы</a></span></p>
+                            <p class="card-text">Кукуруза прямиком из Бразилии. Выращена с любовью.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style='text-decoration: none;' data-fancybox="iframe" href="https://yandex.ru/map-widget/v1/?um=constructor%3A1ff2981c28ea9db865a0bad283427e078c9a558d9bf94319967e81a003eb8eca&amp;source=constructor" data-type="iframe" href="javascript:;">Посмотреть на карте</a></button>
+
+                                </div>
+                                <p style="color: darkgray; margin-top: 1rem; margin-bottom: 1rem"><i>80 м. от вас</i></p>
+
+                            </div>
+                            <small class="text-muted">190 р. <i>+ Кэшбек 8%</i></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="col staff">
+                    <div class="card shadow-sm">
+                        <img src="./images/staff1.jpg" width="100%" height="100%" alt="">
+
+                        <div class="card-body">
+                            <p class="card-text">Продавец: <b>Эльдар</b></p>
+                            <p class="card-text">Рейтинг:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span><a href="" style="float: right">Отзывы</a></span></p>
+                            <p class="card-text">Значки города-курорта Анапа всех видов и размеров по фиксированной цене.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style='text-decoration: none;' data-fancybox="iframe" href="https://yandex.ru/map-widget/v1/?um=constructor%3A1ff2981c28ea9db865a0bad283427e078c9a558d9bf94319967e81a003eb8eca&amp;source=constructor" data-type="iframe" href="javascript:;">Посмотреть на карте</a></button>
+
+                                </div>
+                                <p style="color: darkgray; margin-top: 1rem; margin-bottom: 1rem"><i>300 м. от вас</i></p>
+
+                            </div>
+                            <small class="text-muted">50 р. <i>+ Кэшбек 3%</i></small>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col staff">
+                    <div class="card shadow-sm">
+                        <img src="./images/staff2222.jpg" width="100%" height="100%" alt="">
+
+                        <div class="card-body">
+                            <p class="card-text">Продавец: <b>Мидир</b></p>
+                            <p class="card-text">Рейтинг:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span><a href="" style="float: right">Отзывы</a></span></p>
+                            <p class="card-text">Древние ценности выкопанные на территории пляжей Анапы.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style='text-decoration: none;' data-fancybox="iframe" href="https://yandex.ru/map-widget/v1/?um=constructor%3A1ff2981c28ea9db865a0bad283427e078c9a558d9bf94319967e81a003eb8eca&amp;source=constructor" data-type="iframe" href="javascript:;">Посмотреть на карте</a></button>
+
+                                </div>
+                                <p style="color: darkgray; margin-top: 1rem; margin-bottom: 1rem"><i>170 м. от вас</i></p>
+
+                            </div>
+                            <small class="text-muted">600 р. <i>+ Кэшбек 7%</i></small>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col staff">
+                    <div class="card shadow-sm">
+                        <img src="./images/staff333.jpg" width="100%" height="100%" alt="">
+
+                        <div class="card-body">
+                            <p class="card-text">Продавец: <b>Гаэль</b></p>
+                            <p class="card-text">Рейтинг:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span><a href="" style="float: right">Отзывы</a></span></p>
+                            <p class="card-text">Фигурки ручной работы из дерева. Сделано руками Анапских мастеров.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a style='text-decoration: none;' data-fancybox="iframe" href="https://yandex.ru/map-widget/v1/?um=constructor%3A1ff2981c28ea9db865a0bad283427e078c9a558d9bf94319967e81a003eb8eca&amp;source=constructor" data-type="iframe" href="javascript:;">Посмотреть на карте</a></button>
+
+                                </div>
+                                <p style="color: darkgray; margin-top: 1rem; margin-bottom: 1rem"><i>250 м. от вас</i></p>
+
+                            </div>
+                            <small class="text-muted">960 р. <i>+ Кэшбек 8%</i></small>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col entertain">
+                <div class="card shadow-sm">
+                    <img src="./images/parash.jfif" width="100%" height="100%" alt="">
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a style='text-decoration: none;' data-fancybox="iframe" href="https://yandex.ru/map-widget/v1/?um=constructor%3A1ff2981c28ea9db865a0bad283427e078c9a558d9bf94319967e81a003eb8eca&amp;source=constructor" data-type="iframe" href="javascript:;">Посмотреть на карте</a></button>
+
+                            </div>
+                            <small class="text-muted">5000 р.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col entertain">
+                <div class="card shadow-sm">
+                    <img src="./images/cater.jpg" width="100%" height="100%" alt="">
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть на карте</button>
+
+                            </div>
+                            <small class="text-muted">3500 р.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col entertain">
+                <div class="card shadow-sm">
+                    <img src="./images/meduse.jpg" width="100%" height="100%" alt="">
+
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть на карте</button>
+
+                            </div>
+                            <small class="text-muted">1500 р.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    </main>
+
+    <script>
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("col");
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "showa");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "showa");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+    </script>
+    <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>
