@@ -77,6 +77,6 @@ body {
 @media (max-width: 768px) {
     .registration-container{        
         box-shadow: none;
-        padding-top: 7rem;
+        padding-top: 2rem;
     }
 }
