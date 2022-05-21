@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="surname">Фамилия И.О.</div>
+        <div id="ID">ID</div>
+        <div id="line_spacer_1"></div>
+        <div id="line_spacer_2"></div>
+        <div id="line_spacer_3"></div>
+    </header>
+    <div id="img_container">
+    <img src="beach_icon_saler.png" width="100%" id="ico">
+    </div>
+    <Main>
+        <section class="ActionButton">
+            Мой профиль
+        </section>
+        <a href="/tovars.html" style="text-decoration:none;"><section class="ActionButton">
+            Товары
+        </section></a>
+        <section class="ActionButton">
+            Торговать
+        </section>
+        <section class="ActionButton">
+            Сводка
+        </section>
+        <section class="ActionButton">
+            Клиенты
+        </section>
+    </Main>
+    <footer>
+        На главную
+    </footer>
+</body>
+<script>
+    function OnButtonHover(event){
+        event.target.style.background  = 'blue';
+        event.target.style.color  = 'white';
+    }
+
+    let buttons_arr = document.querySelectorAll('.ActionButton')
+    buttons_arr.forEach(element=>element.addEventListener("touchstart", OnButtonHover))
+</script>
+</html>

@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media (max-width: 500px){
+
+    header {
+        display: grid;
+        grid-template-areas:
+            "a a a b c"
+            "a a a b d"
+            "a a a b e";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        background-color: black;
+        height: 7vh;
+        border-radius: 20px;
+        color: white;
+        font-size: 3vh;
+    }
+
+    #ID {
+        grid-area: b;
+        align-self: center;
+    }
+
+    #surname {
+        grid-area: a;
+        justify-self: center;
+        align-self: center;
+    }
+
+    #line_spacer_1 {
+        background-color: white;
+        border-radius: 1.5vh;
+        margin: 0.5vh 0.5vh 0.5vh 0.5vh;
+        grid-area: c;
+    }
+
+    #line_spacer_2 {
+        background-color: white;
+        border-radius: 1vh;
+        margin: 0.5vh 0.5vh 0.5vh 0.5vh;
+        grid-area: d;
+    }
+
+    #line_spacer_3 {
+        background-color: white;
+        border-radius: 1vh;
+        margin: 0.5vh 0.5vh 0.5vh 0.5vh;
+        grid-area: e;
+    }
+
+    .ActionButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 6vh;
+        border-radius: 5px;
+        background-color: transparent;
+        margin-top: 3px;
+        margin-bottom: 12px;
+        color: black;
+        border: 3px black solid;
+        border-radius: 20px;
+        font-size: 3vh;
+    }
+
+    #ico {
+        background-color: white;
+        color: white;
+    }
+
+    #img_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 6vh;
+        border-radius: 5px;
+        background-color: black;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        color: white;
+        border: 3px black solid;
+        border-radius: 20px;
+        font-size: 3vh;
+    }
+}
+

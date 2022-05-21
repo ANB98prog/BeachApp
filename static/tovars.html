@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_tovars.css">
+</head>
+<body>
+    <header>
+        <div id="surname">Мои товары</div>
+        <div id="ID">ID</div>
+        <div id="line_spacer_1"></div>
+        <div id="line_spacer_2"></div>
+        <div id="line_spacer_3"></div>
+    </header>
+    <main>
+        <section class="filter">
+            <div>Выбрать категорию</div>
+            <select id='SELECT' style="font-size: 3vh;" name="select" id="category_selection"> <!--Supplement an id here instead of using 'name'-->
+                <option value="value1">Напитки</option>
+                <option value="value2" selected>Сладости</option>
+                <option value="value3">Сувениры</option>
+            </select>
+            <input id="tovarAdd" type="button" name="+" value="+/-" style="
+                font-size: 3vh;
+                background-color: red;
+                color: white;
+                border-radius: 5px;
+            ">
+        </section>
+        <section class="tovar">
+            <div style="grid-area: a;">Наименование:</div>
+            <div style="grid-area: b;">Трубочки со сгущёнкой</div>
+            <div style="grid-area: c;">Категория:</div>
+            <div style="grid-area: d;">Сладости</div>
+            <div style="grid-area: e;">Стоимость:</div>
+            <div style="grid-area: f;">80</div>
+            <div style="grid-area: g;">Комиссия:</div>
+            <div style="grid-area: h;">3%</div>
+            <div style="grid-area: m;">Статус:</div>
+            <div style="grid-area: n;">В наличии</div>
+            <img src="tubes.png" style="grid-area: z;  justify-self: center; margin-top: 10px;
+                                        border: solid 5px black;
+                                        border-radius: 5px;
+                                        margin-bottom: 10px;" width="70%">
+        </section>
+        <section class="tovar">
+            <div style="grid-area: a;">Наименование:</div>
+            <div style="grid-area: b;">Похлава</div>
+            <div style="grid-area: c;">Категория:</div>
+            <div style="grid-area: d;">Сладости</div>
+            <div style="grid-area: e;">Стоимость:</div>
+            <div style="grid-area: f;">80</div>
+            <div style="grid-area: g;">Комиссия:</div>
+            <div style="grid-area: h;">3%</div>
+            <div style="grid-area: m;">Статус:</div>
+            <div style="grid-area: n;">В наличии</div>
+            <img src="pohlava.jpg" style="grid-area: z;  justify-self: center; margin-top: 10px;
+            border: solid 5px black;
+                                        border-radius: 5px; margin-bottom: 10px;" width="70%">
+        </section>
+        <section class="tovar" style="display:none;">
+            <div style="grid-area: a;">Наименование:</div>
+            <div style="grid-area: b;">Похлава</div>
+            <div style="grid-area: c;">Категория:</div>
+            <div style="grid-area: d;">Напитки</div>
+            <div style="grid-area: e;">Стоимость:</div>
+            <div style="grid-area: f;">80</div>
+            <div style="grid-area: g;">Комиссия:</div>
+            <div style="grid-area: h;">3%</div>
+            <div style="grid-area: m;">Статус:</div>
+            <div style="grid-area: n;">В наличии</div>
+            <img src="pohlava.jpg" style="grid-area: z;  justify-self: center; margin-top: 10px;" width="70%">
+        </section>
+    </main>
+    <div id="pop_up_wrapper">
+    <div id="pop_up_nested_wrapper">
+    <div class="pop_up">
+        <div id="close_button" style="position: absolute; right: 5px; top: 5px;">X</div>
+        <div style="text-align: center; grid-area: a;">Добавить товар</div>
+        <div style="grid-area:b;">Категория</div><input style="grid-area: c;" type="text">
+        <div style="grid-area: d;">Наименование</div><input style="grid-area: e;" type="text">
+        <div style="grid-area: f;">Цена</div><input style="grid-area: g;" type="text">
+        <div style="grid-area: h;">Статус</div><select style="grid-area: m;" id='SELECTION' name="select" id="category_selection"> 
+            <option value="value1">В наличии</option>
+            <option value="value2" selected>Нет</option>
+        </select>
+        <input style="grid-area: z; font-size: 3vh;" type="button" value="Загрузить фотографию" style="width: 100%">
+        <input style="grid-area: y; font-size: 3vh;" type="button" value="Submit" style="width: 100%">
+    </div>
+</body>
+<script>
+    function SelectionChangeEvent(event){
+        let items = document.querySelectorAll(".tovar")
+
+        items.forEach((element)=>{
+            if (element.childNodes[7].textContent != event.target.options[event.target.selectedIndex].text){
+                element.style.display = 'none'
+            }
+            else{
+                element.style.display = 'grid'
+            }
+        })
+    }
+
+    function AddTovarHandler(event){
+        pop_up_wrapper.classList.add('active');
+    }
+
+    function CloseAddTovarHandler(event){
+        pop_up_wrapper.classList.remove('active');
+        elem.childNodes[6].value = ''
+        elem.childNodes[9].value = ''
+        elem.childNodes[12].value = ''
+    }
+
+    function EditTovar(event){
+        console.log(event.target.classList)
+        pop_up_wrapper.classList.add('active')
+        let elem = pop_up_wrapper.firstElementChild.firstElementChild;
+        elem.childNodes[6].value = event.target.childNodes[3].textContent
+        elem.childNodes[9].value = event.target.childNodes[7].textContent
+        elem.childNodes[12].value = event.target.childNodes[11].textContent
+    }
+
+    document.querySelectorAll(".tovar").forEach((element)=>{element.addEventListener('click', EditTovar, true)})
+    close_button.addEventListener('click', CloseAddTovarHandler)
+    tovarAdd.addEventListener('click', AddTovarHandler)
+    SELECT.addEventListener('change', SelectionChangeEvent)
+    
+</script>
+</html>
