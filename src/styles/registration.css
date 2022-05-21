@@ -22,12 +22,46 @@ body {
 .registration-header {
     margin-left: auto;
     margin-right: auto;
+    padding-top: 3%;
     padding-bottom: 3%;
 }
 
 .registration-header h4 {
     text-align: center;
 }
+
+/* Saler css styles */
+.docs-container {
+    width: 100%;
+    margin: 0;
+}
+
+.docs {
+    width: 100%;
+    height: 150px;
+    border: dashed rgba(63, 143, 218, 0.751);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.docs i {
+    margin: auto;
+    font-size: 2.5rem;
+    color: rgba(63, 143, 218, 0.219);
+}
+
+.docs:hover i {
+    font-size: 3rem;
+    color: rgba(63, 143, 218, 0.751);
+}
+
+.doc-header {
+    padding: 0;
+}
+
+/* End saler css styles */
 
 /* monitors and laptops */
 @media (min-width: 1240px)  {}

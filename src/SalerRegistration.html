@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/registration.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+
+<body class="bg-light">
+    <div class="container registration-container">
+        <div class="row g-5">
+            <div class="col-md-12">
+                <div class="row registration-header">
+                    <h4>Регистрация продавца</h4>
+                </div>
+                <form class="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">Имя*</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Обязательное поле
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Фамилия*</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Обязательное поле
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="phone" class="form-label">Номер телефона*</label>
+                            <input type="text" class="form-control" id="phone" placeholder="+79999999999" value=""
+                                required>
+                            <div class="invalid-feedback">
+                                Обязательное поле
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="password" class="form-label">Пароль*</label>
+                            <input type="password" class="form-control" id="password" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Обязательное поле
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 ">
+                            <label for="sex" class="form-label">Пол</label>
+                            <select id="sex" class="form-select form-select-mg" aria-label=".form-select-sm example">
+                                <option selected>Выбрать</option>
+                                <option value="female">жен</option>
+                                <option value="male">муж</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6 ">
+                            <label for="age" class="form-label">Год рождения</label>
+                            <input type="date" class="form-control" id="age" placeholder="" value="">
+                        </div>
+
+                        <div class="credit-card">
+                            <div class="col-sm-10 mt-1">
+                                <label for="card_number" class="form-label">Номер карты*</label>
+                                <input type="text" class="form-control" id="card_number"
+                                    placeholder="**** **** **** ****" value="">
+                            </div>
+
+                            <div class="col-sm-10 mt-3">
+                                <label for="card_holder" class="form-label">Имя держателя карты*</label>
+                                <input type="text" class="form-control" id="card_holder" placeholder="" value="">
+                            </div>
+
+                            <div class="row expired_fields mt-3">
+                                <label for="expired_fields " class="form-label">Срок действия*</label>
+                                <div class="col-sm-3">
+                                    <select id="expired_month" class="form-select form-select-mg"
+                                        aria-label=".form-select-sm example">
+                                        <option selected>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                    <label for="expired_month" class="form-label">месяц</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select id="expired_year" class="form-select form-select-mg"
+                                        aria-label=".form-select-sm example">
+                                        <option selected>2022</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                    </select>
+                                    <label for="expired_year" class="form-label">год</label>
+                                </div>
+                                <div class="row" id="card_cvv2">
+                                    <label for="card_cvv2" class="form-label">CVV2/CVC2*</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="card_cvv2" placeholder="" value="">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p style="line-height: 1.1rem;">группа из трех цифр на обратной стороне карты
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row registration-header">
+                            <h4>Необходимые документы</h4>
+                        </div>
+                        <div class="row docs-container">
+                            <div class="doc-header">
+                                <p>1) Паспорт</p>
+                            </div>
+                            <div class="docs">
+                                <i class="fa-solid fa-file-import"></i>
+                            </div>
+
+                            <div class="doc-header">
+                                <p>2) Лицензия</p>
+                            </div>
+                            <div class="docs">
+                                <i class="fa-solid fa-file-import"></i>
+                            </div>
+
+                            <div class="doc-header">
+                                <p>3) Медкнижка</p>
+                            </div>
+                            <div class="docs">
+                                <i class="fa-solid fa-file-import"></i>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary">Регистрация</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/77985ab91e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
