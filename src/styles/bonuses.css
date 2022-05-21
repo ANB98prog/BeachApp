@@ -1,0 +1,127 @@
+* {
+    --box-shadow-color: rgba(91, 83, 83, 0.733);
+    --status-text-color: #454748;
+    --statusbar-done-color: #FFA62B;    
+    --statusbar-notdone-color: #e9ecef;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bonuses-container {
+    max-width: 540px;
+    box-shadow: 3px 3px 5px var(--box-shadow-color);
+    border-radius: 20px;
+    padding: 1% 1em 3% 1em;
+    margin: auto;
+}
+
+.header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.header h4 {
+    text-align: center;
+}
+
+.bonuses-status {
+    position: relative;
+}
+
+.bonus-description {
+    font-weight: 700;
+}
+
+.progress {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 325px;
+    height: 0.25rem;
+    overflow: auto;
+    left: -8.85rem;
+    top: 182px;
+    z-index: -1;
+    background-color: var(--statusbar-notdone-color);
+}
+
+.progress-bar {
+    background-color: var(--statusbar-done-color);
+}
+
+.circle-cell {
+    padding-left: 12px;
+    padding-right: 10px;
+    width: 23px;
+}
+
+.bonuses-status-table td {
+    height: 50px;
+}
+
+.bonus-text {
+    padding-top: 25px;
+}
+
+span.bonus-status {
+    margin-right: 23rem;
+}
+
+span.bonus-status-vip {
+    margin-right: 25.5rem;
+}
+
+.circle.active i {
+    color: var(--statusbar-done-color);
+}
+
+.circle i {
+    color: #e9ecef;
+}
+
+.status-active {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.status-notactive {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.status-text-color {
+    color: var(--status-text-color);
+}
+
+td p {
+    margin-bottom: 0;
+}
+
+.bunuses-description {
+    /* position: absolute;     */
+    max-width: 540px;
+    border-radius: 20px;
+    padding: 1% 1em 3% 1em;
+}
+
+
+/* mobile */
+@media (max-width: 768px) {
+    .bonuses-container {     
+        box-shadow: none;
+        padding-top: 2rem;
+    }
+
+    span.bonus-status{
+        margin-right: 20rem;
+    }
+
+    span.bonus-status-vip{
+        margin-right: 23.5rem;
+    }
+}
